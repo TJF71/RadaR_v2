@@ -57,3 +57,14 @@ footer .bi:hover {
     /* border-radius: 15px;
     box-shadow: ; */
 }
+
+.myLogo {
+	transform: rotateZ(45deg);
+	animation: rotateAnimation 15s linear infinite;
+}
+
+@keyframes rotateAnimation {
+	from {transform: rotateZ(0deg);}
+	to {transform: rotateZ(360deg);}
+}
+

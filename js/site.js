@@ -10,13 +10,13 @@ function getValues() {
     //  
     // or
     // 
-    //    let regex = /[^a-zA-Z0-9]/g;
-    //    let cleanInput = input.replaceAll(regex, '');
+      let regex = /[^a-zA-Z0-9]/g;
+      let cleanInput = message.replaceAll(regex, '');
     //
 
 
     // validate input and make sure its not empty
-    if (message.length == 0) {
+    if (cleanInput.length == 0) {
 
         Swal.fire(
             {
@@ -29,13 +29,13 @@ function getValues() {
     } else {
 
         // pas the user input to reverseMessage function and assign it's return to a variable
-        let revMsg = reverseMessage(message);
+        let revMsg = reverseMessage(cleanInput);
 
         //send the message adn reverse message to checkForPalindrome
-        let palindrome = checkForPalindrome(message, revMsg);
+        let palindrome = checkForPalindrome(cleanInput, revMsg);
 
         // give th results to display messare
-        displayResults(message, revMsg, palindrome);
+        displayResults(cleanInput, revMsg, palindrome);
 
 
     }
