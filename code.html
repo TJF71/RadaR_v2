@@ -39,17 +39,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        <a class="nav-link" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/app.html">The App</a>
+                        <a class="nav-link " href="/app.html">The App</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/code.html">The Code</a>
+                        <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
                         <!-- CHANGE ME TO THE REPO LINK -->
-                        <a class="nav-link" href="https://github.com/tomfarrell">
+                        <a class="nav-link" href="https://github.com/TJF71/RadaR_v2">
                             The Repo
                         </a>
                     </li>
@@ -79,18 +79,85 @@
             <div class="col col-12 col-lg-8">
                 <pre class="line-numbers">
                     <code class="language-js">
-function displayMessage() {
-    // get the text out of the input and assign it to a variable
-        let msg = document.getElementById('message').value;
-    
-        Swal.fire(
-        {
-            backdrop: false,
-            title: 'APP NAME',
-            text: msg,  //replace this with that variable
-        }
-        );
-}                
+
+
+                        // get the user input to check
+                        function getValues() {
+                            // get the text out of the input and assign it to a variable
+                            let message = document.getElementById('userInput').value;
+                        
+                        
+                              let regex = /[^a-zA-Z0-9]/g;
+                              let cleanInput = message.replaceAll(regex, '');
+                        
+                        
+                            // validate input and make sure its not empty
+                            if (cleanInput.length == 0) {
+                        
+                                Swal.fire(
+                                    {
+                                        backdrop: 'error',
+                                        backdrop: false,
+                                        //replace this with that variable
+                                        text: 'Please enter a string to check'   
+                                    }
+                                );
+                        
+                            } else {
+                        
+                                // pass the user input to reverseMessage function and 
+                                // assign it's return to a variable
+                                let revMsg = reverseMessage(cleanInput);
+                        
+                                //send the message adn reverse message to checkForPalindrome
+                                let palindrome = checkForPalindrome(cleanInput, revMsg);
+                        
+                                // give th results to display messare
+                                displayResults(cleanInput, revMsg, palindrome);
+                        
+                            }
+                        }
+                        
+                        // reverse the string
+                        function reverseMessage(input) {
+                        
+                            // define return
+                            let output = '';
+                        
+                            for (let i = input.length - 1; i >= 0; i--) {
+                                output += input[i];
+                            }
+                        
+                            return output;
+                        
+                        }
+                                                
+                        // check to see if the strings match
+                        
+                        function checkForPalindrome(msg, revmsg) {
+                            if (msg == revmsg) {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                   
+                        }
+                        
+                        function displayResults(msgEntered, revMsg, PalTrueFalse) {
+                        
+                            if (PalTrueFalse == true) {
+                            document.getElementById('msg').textContent =
+                             `Your message of ${msgEntered} is a palindrome!`;
+                        } else {
+                            document.getElementById('msg').textContent = 
+                            'Sorry, but your message is not a palindrome';
+                        }
+                        
+                        
+                            // document.getElementById('msg').textContent = `Your message in reverse is ${revMsg}`;
+                            document.getElementById('alert').classList.remove('invisible');
+                        }
+                        
                     </code>
                 </pre>
             </div>
