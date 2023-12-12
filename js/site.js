@@ -83,7 +83,6 @@ function displayResults(msgEntered, revMsg, PalTrueFalse) {
 }
 
 
-    // document.getElementById('msg').textContent = `Your message in reverse is ${revMsg}`;
 
 
     document.getElementById('alert').classList.remove('invisible');

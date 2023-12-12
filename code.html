@@ -29,7 +29,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="/img/Logo_Only.svg" height="50" class="myLogo" />
-               RaDaR
+                RaDaR
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -79,17 +79,13 @@
             <div class="col col-12 col-lg-8">
                 <pre class="line-numbers">
                     <code class="language-js">
-
-
-                        // get the user input to check
                         function getValues() {
                             // get the text out of the input and assign it to a variable
                             let message = document.getElementById('userInput').value;
                         
-                        
-                              let regex = /[^a-zA-Z0-9]/g;
-                              let cleanInput = message.replaceAll(regex, '');
-                        
+                            // clean up the values as needed by using regex
+                            let regex = /[^a-zA-Z0-9]/g;
+                            let cleanInput = message.replaceAll(regex, '');
                         
                             // validate input and make sure its not empty
                             if (cleanInput.length == 0) {
@@ -99,7 +95,7 @@
                                         backdrop: 'error',
                                         backdrop: false,
                                         //replace this with that variable
-                                        text: 'Please enter a string to check'   
+                                        text: 'Please enter a string to check'
                                     }
                                 );
                         
@@ -131,7 +127,7 @@
                             return output;
                         
                         }
-                                                
+                        
                         // check to see if the strings match
                         
                         function checkForPalindrome(msg, revmsg) {
@@ -140,33 +136,33 @@
                             } else {
                                 return false;
                             }
-                   
+                        
                         }
                         
                         function displayResults(msgEntered, revMsg, PalTrueFalse) {
                         
                             if (PalTrueFalse == true) {
-                            document.getElementById('msg').textContent =
-                             `Your message of ${msgEntered} is a palindrome!`;
-                        } else {
-                            document.getElementById('msg').textContent = 
-                            'Sorry, but your message is not a palindrome';
+                                document.getElementById('msg').textContent =
+                                    `Your message of ${msgEntered} is a palindrome!`;
+                            } else {
+                                document.getElementById('msg').textContent =
+                                    'Sorry, but your message is not a palindrome';
+                            }
+                        
                         }
                         
-                        
-                            // document.getElementById('msg').textContent = `Your message in reverse is ${revMsg}`;
-                            document.getElementById('alert').classList.remove('invisible');
-                        }
+
+
                         
                     </code>
                 </pre>
             </div>
             <div class="col col-12 col-lg-4">
-                <p>The code is structured in one function</p>
+                <!-- <p>The code is structured in one function</p>
                 <p>
                     <code>display message</code> displays a sweetalert
                     when the button is pressed.
-                </p>
+                </p> -->
             </div>
         </div>
 
@@ -182,7 +178,7 @@
                 </div>
             </div>
             <div class="col text-center">
-                <img src="/img/Logo_Only.svg" height="50" class="myLogo"/>
+                <img src="/img/Logo_Only.svg" height="50" class="myLogo" />
             </div>
             <div class="col text-center text-lg-end">
                 <a href="https://www.linkedin.com/in/thomas-j-farrell-75195a94/"> <i class="bi bi-linkedin"></i></a>
