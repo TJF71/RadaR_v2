@@ -22,7 +22,7 @@ function getValues() {
 
     } else {
 
-        // pas the user input to reverseMessage function and assign it's return to a variable
+        // pass the user input to reverseMessage function and assign it's return to a variable
         let revMsg = reverseMessage(cleanInput);
 
         //send the message adn reverse message to checkForPalindrome
