@@ -16,7 +16,7 @@ function getValues() {
             {
                 backdrop: 'error',
                 backdrop: false,
-                text: 'Please enter a string to check'   //replace this with that variable
+                text: 'Please enter a string to check'   
             }
         );
 
